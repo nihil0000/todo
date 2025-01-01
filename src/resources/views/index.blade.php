@@ -6,9 +6,21 @@
 
 @section('content')
 <section class="todo__alert">
+    @if (session('message'))
     <div class="todo__alert--success">
-        Todoを作成しました
+        {{ session('message') }}
     </div>
+    @endif
+
+    @if ($errors->any())
+    <div class="todo__alert--danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li> {{ $error }} </li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
 </section>
 
 <section class="todo__content">
