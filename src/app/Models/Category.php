@@ -9,5 +9,6 @@ class Category extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name'];
+    protected $primaryKey = 'category_id'; // 主キーを指定
+    protected $fillable = ['category_name'];
 }
